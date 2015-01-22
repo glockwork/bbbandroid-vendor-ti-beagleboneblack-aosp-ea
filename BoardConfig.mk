@@ -18,7 +18,7 @@
 # by BoardConfigVendor.mk
 #BOARD_USES_GENERIC_AUDIO := true
 #USE_CAMERA_STUB := true
-#BOARD_EGL_CFG := device/ti/beagleboneblack/egl.cfg
+BOARD_EGL_CFG := device/ti/beagleboneblack/egl.cfg
 
 # Workaround suggested by Chris Simmonds (chris@2net.co.uk)
 COMMON_GLOBAL_CFLAGS += -DWORKAROUND_BUG_10194508=1
