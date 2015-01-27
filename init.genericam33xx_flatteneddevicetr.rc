@@ -67,6 +67,23 @@ on boot
 # Boost cpu speed to 1GHz
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed 1000000
 
+    
+# BLE and WIFI
+
+# Opens uart1 for communication for zigbee
+    write /sys/kernel/debug/omap_mux/uart1_txd 0
+    write /sys/kernel/debug/omap_mux/uart1_rxd 20
+    chmod 0666 /dev/ttyO1
+
+# Opens uart4 for communication for BLE
+    write /sys/kernel/debug/omap_mux/uart4_txd 0
+    write /sys/kernel/debug/omap_mux/uart4_rxd 20
+    chmod 0666 /dev/ttyO4
+
+
+    setprop hw.nobattery true
+    setprop hw.nophone true
+
 # Default Read Ahead value for sdcards
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
 

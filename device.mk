@@ -24,7 +24,9 @@ PRODUCT_COPY_FILES := \
 	device/ti/beagleboneblack/media_codecs.xml:system/etc/media_codecs.xml \
 	device/ti/beagleboneblack/media_profiles.xml:system/etc/media_profiles.xml \
 	device/ti/beagleboneblack/mixer_paths.xml:system/etc/mixer_paths.xml \
-	device/ti/beagleboneblack/audio_policy.conf:system/etc/audio_policy.conf
+	device/ti/beagleboneblack/audio_policy.conf:system/etc/audio_policy.conf \
+	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml
 
 # KeyPads
 PRODUCT_COPY_FILES += \
@@ -75,7 +77,7 @@ PRODUCT_PACKAGES += \
         tinyplay
 
 PRODUCT_PACKAGES += \
-	dhcpcd.conf
+	dhcpcd.confblue
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -98,5 +100,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         i2c-tools \
         dropbear
+
+# BBBAndroid - Bluetooth
+PRODUCT_PACKAGES += \
+        bluetooth.default \
+        Bluetooth
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
