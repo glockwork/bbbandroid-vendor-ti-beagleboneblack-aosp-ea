@@ -49,6 +49,12 @@ on post-fs-data
     #         into the bone_capemgr file.
     #         Ex: write /sys/devices/bone_capemgr.9/slots MY-CAPE
 
+    # UART 1
+    write /sys/devices/bone_capemgr.9/slots BB-UART1
+
+    # UART 4
+    write /sys/devices/bone_capemgr.9/slots BB-UART4
+
     # BBBAndroid: Unlock each GPIO pin bank for mmap() access
     write /sys/class/gpio/export 5
     write /sys/class/gpio/export 65
